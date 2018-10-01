@@ -1,0 +1,1500 @@
+body {
+	width: 100%;
+    position: relative;
+}
+.wrapper {
+	min-width: 750px;
+	margin: 0 auto;
+}
+
+
+/* Header
+-----------------------------------------------------------------------------*/
+
+.main-navigation {
+    height: 62px;
+    background: $headerBackgroundColor;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+        background: transparent;
+    }
+
+    &__wrapper {
+        @include make-row();
+        display: flex;
+        flex-direction: row;
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+            justify-content: flex-end;
+            flex-direction: column;
+        }
+    }
+
+
+    &__block {
+        flex-grow: 1;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+            justify-content: flex-end;
+            flex-direction: column;
+            align-self: flex-end;
+            background-color: $headerBackgroundColor;
+            z-index: 1;
+            display: none;
+            padding: 20px 0;
+        }
+    }
+
+    &__item {
+        padding: 0;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            padding: 0 30px;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            padding: 0 20px;
+        }
+
+        &--active {
+            .main-navigation__link {
+                @include Text-Style-11();
+                text-decoration: none;
+                border-bottom: 2px solid $headerLinksHoverColor;
+            }
+        }
+    }
+
+    &__link {
+        @include Text-Style();
+        display: block;
+        border-bottom: 2px solid transparent;
+        padding-top: 17px;
+
+        &:hover {
+            @include Text-Style-11();
+            text-decoration: none;
+            border-bottom: 2px solid $headerLinksHoverColor;
+        }
+
+        &:focus {
+            text-decoration: none;
+            @include Text-Style ();
+        }
+    }
+}
+
+.hamburger-button {
+    display: none;
+
+    &:checked ~ .main-navigation__block {
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+            display: block;
+        }
+    }
+
+    &:checked ~ .hamburger {
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            background: url("../images/down-arrow_tablet.png") no-repeat $headerBackgroundColor center center;
+            width: 380px;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            background: url("../images/down-arrow_mobile.png") no-repeat $headerBackgroundColor center center;
+            width: 301px;
+        }
+    }
+}
+
+.hamburger {
+    display: none;
+    align-self: flex-end;
+    margin-top: 70px;
+    margin-bottom: 0;
+    width: 125px;
+    height: 100px;
+    padding: 15px;
+    background: url("../images/burger_tablet.png") no-repeat transparent center center;
+    border: none;
+    cursor: pointer;
+    position: relative;
+
+    transition: all .3s linear;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        display: inline-flex;
+
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        display: inline-flex;
+        width: 82px;
+        height: 58px;
+        background: url("../images/burger_mobile.png") no-repeat transparent;
+    }
+
+}
+
+.header-background {
+    height: 1062px;
+    border: 1px solid #fff;
+    background: url("../images/dj.jpg") no-repeat center;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        height: 2002px;
+        background: url("../images/dj_tablet.jpg") no-repeat center top;
+        border: none;
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        height: 1336px;
+        background: url("../images/dj_mobile.jpg") no-repeat center top;
+        border: none;
+    }
+}
+
+.logo {
+    @include make-sm-column(12);
+    background: url("../images/logo.png") no-repeat center top;
+    width: 426px;
+    height: 394px;
+    margin-top: 219px;
+    margin-left: -9px;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        background: url("../images/logo_tablet.png") no-repeat center top;
+        width: 804px;
+        height: 742px;
+        margin-top: 414px;
+        margin-left: 187px;
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        background: url("../images/logo_mobile.png") no-repeat center top;
+        width: 537px;
+        height: 496px;
+        margin-top: 275px;
+        margin-left: 95px;
+    }
+}
+
+
+
+//Main content
+
+
+.button {
+    margin: 14px 1px 73px;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        margin: 50px auto 140px;
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        margin: 40px auto 100px;
+    }
+
+    &--hell-and-silence {
+        @include button-link(url("../images/play_buttons_background_1.jpg"), $buttonHellAndSilenceBackground, $buttonHellAndSilenceAlterBackground);
+        @include Text-Style-9();
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            @include button-link(url("../images/play_buttons_background_1_tablet.jpg"), $buttonHellAndSilenceBackground, $buttonHellAndSilenceAlterBackground);
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            @include button-link(url("../images/play_buttons_background_1_mobile.jpg"), $buttonHellAndSilenceBackground, $buttonHellAndSilenceAlterBackground);
+        }
+    }
+
+    &--night-visions {
+        @include button-link(url("../images/play_buttons_background_2.jpg"), $buttonNightVisionsBackground, $buttonNightVisionsAlterBackground);
+        @include Text-Style-4();
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            @include button-link(url("../images/play_buttons_background_2_tablet.jpg"), $buttonNightVisionsBackground, $buttonNightVisionsAlterBackground);
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            @include button-link(url("../images/play_buttons_background_2_mobile.jpg"), $buttonNightVisionsBackground, $buttonNightVisionsAlterBackground);
+        }
+    }
+
+    &--smoke-plus-mirrors {
+        @include button-link(url("../images/play_buttons_background_3.jpg"), $buttonSmokePlusMirrorsBackground, $buttonSmokePlusMirrorsAlterBackground);
+        @include Text-Style-4();
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            @include button-link(url("../images/play_buttons_background_3_tablet.jpg"), $buttonSmokePlusMirrorsBackground, $buttonSmokePlusMirrorsAlterBackground);
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            @include button-link(url("../images/play_buttons_background_3_mobile.jpg"), $buttonSmokePlusMirrorsBackground, $buttonSmokePlusMirrorsAlterBackground);
+        }
+    }
+
+    &--concert-tours {
+        @include button-link(none, transparent, $buttonConcertToursBackground);
+        @include Text-Style-4();
+        margin: 34px 0 0 0;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 45px 0 0;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin: 100px 0 0;
+        }
+    }
+
+    &--latter-compositions {
+        @include Text-Style-4();
+        @include button-link(none, transparent, $buttonLatterCompositionsBackground);
+        margin: 58px 0 0 -1px;
+        float: left;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 90px 0 63px 0;
+        }
+    }
+}
+
+
+//Discography section
+
+.discography {
+    background: url("../images/discography_image.jpg") no-repeat center bottom;
+    background-size: contain;
+    min-height: 787px;
+    width: 100%;
+    padding-bottom: 440px;
+    @include block-description-heading-text();
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        background: url("../images/discography_image_tablet.jpg") no-repeat center bottom;
+        background-size: contain;
+        padding-bottom: 390px;
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        background: url("../images/discography_image_mobile.jpg") no-repeat center bottom;
+        background-size: contain;
+        padding-bottom: 640px;
+    }
+
+    &__heading {
+        background: url("../images/discography_heading_background.jpg");
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin-top: 20px;
+        }
+    }
+
+    &__description {
+        margin: 0 0 241px;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 58px 0 153px;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin: 0;
+        }
+    }
+
+    &__text {
+        padding: 0 130px 0;
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+            padding: 0 50px 0;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin: 36px 0 100px;
+        }
+    }
+
+}
+
+
+.album {
+
+    @include make-sm-column(10);
+    @include make-sm-column-push(1);
+    @include make-lg-column(12);
+    @include make-lg-column-push(0);
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        padding: 0;
+    }
+
+    &--latter-compositions {
+        @include make-sm-column-push(0);
+        @include make-md-column(10);
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            padding-right: 112px;
+        }
+    }
+
+    &__row {
+        @include make-row();
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+
+
+    &__column {
+        @include make-sm-column(12);
+
+        &--heading {
+            @include make-lg-column(7);
+            @include make-lg-column-offset(5);
+
+            @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+                order: 2;
+                margin-top: 34px;
+            }
+
+            @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+                order: 2;
+            }
+        }
+
+        &--title {
+            @include make-lg-column(5);
+            margin-top: -24px;
+
+            @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+                margin-top: 0;
+            }
+        }
+
+        &--description {
+            @include make-lg-column(7);
+
+            @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+                order: 2;
+            }
+
+            @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+                order: 2;
+            }
+        }
+
+        &--latter-compositions {
+            width: 100%;
+            padding-right: 23px;
+        }
+    }
+
+    &__heading {
+        @include Text-Style-10();
+
+        &--new-tracks {
+            @include Text-Style-5-mod();
+            display: block;
+            margin-top: 38px;
+            margin-bottom: 35px;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin-top: 35px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__date {
+        @include Text-Style-7();
+        width: 100%;
+
+    }
+
+    &__title {
+        @include Text-Style-4-name();
+        border-top: 1px solid $albumTitleBorderColor;
+        margin: 0;
+
+        &--new-tracks {
+            @include Text-Style-9-name();
+            width: 100%;
+            margin-bottom: 55px;
+        }
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            padding-top: 4px;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__description {
+        @include Text-Style-8();
+        margin: 0;
+    }
+}
+
+
+
+//Concert Tours section
+
+.concert-tours {
+    background: url("../images/concert_tours_image.jpg") no-repeat center bottom;
+    background-size: contain;
+    width: 100%;
+    min-height: 980px;
+    padding-bottom: 246px;
+    @include block-description-heading-text();
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        padding-bottom: 66px;
+        background: url("../images/concert_tours_image_tablet.jpg") no-repeat center bottom;
+        background-size: contain;
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        background: url("../images/concert_tours_image_mobile.jpg") no-repeat center bottom;
+        background-size: contain;
+        padding-bottom: 340px;
+    }
+    
+    &__heading {
+        background: linear-gradient(to bottom, $concertToursHeadingTopGradientColor, $concertToursHeadingBottomGradientColor);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+
+    &__text {
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            padding: 0 50px 0;
+        }
+    }
+
+    &__content {
+        @include make-sm-column(10);
+        @include make-sm-column-push(1);
+        @include make-lg-column(12);
+        @include make-lg-column-push(0);
+    }
+
+    &__column {
+        @include make-sm-column(8);
+        @include make-md-column(11);
+        @include make-lg-column(7);
+        margin-top: 328px;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin-top: 100px;
+            padding-left: 3px;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin-top: 180px;
+        }
+
+
+    }
+
+    &__about {
+        @include make-sm-column(12);
+    }
+
+    &__title-box {
+        @include make-lg-column(7);
+    }
+
+    &__title {
+        @include Text-Style-4-name();
+        border-top: 1px solid $concertToursTitleBorderColor;
+        margin: 0;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 0 336px 0 0;
+        }
+    }
+
+    &__date {
+        @include Text-Style-7();
+    }
+
+    &__article-heading {
+        @include Text-Style-5();
+        margin: 74px 0 0;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 115px 0 0;
+        }
+    }
+
+    &__article-text {
+        @include Text-Style-6-primary();
+        margin: 20px 0 0;
+        @include ellipsis(5, 24.27px);
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 28px 0 0;
+            padding-right: 12px;
+            @include ellipsis(20, 36.18px);
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            @include ellipsis(20, 24.27px);
+        }
+    }
+}
+
+
+//Latter-compositions section
+
+.latter-compositions {
+    @include block-description-heading-text();
+    position: relative;
+    margin-bottom: 106px;
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+        margin-bottom: 0;
+    }
+
+    &__text {
+        padding: 0 120px 0;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 60px 0 70px;
+            padding: 0 20px 0;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin: 36px 0 60px;
+            padding: 0 40px 0;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-flow: wrap;
+        margin: 24px 0 0;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            @include make-md-column(10);
+            @include make-md-column-push(1);
+            padding-right: 0;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            @include make-sm-column(10);
+            @include make-sm-column-push(1);
+            padding-right: 0;
+            padding-left: 0;
+            margin: 0;
+        }
+    }
+
+    &__content {
+        width: 50%;
+        background: $latterCompositionsContantBackgroundColor;
+        padding: 30px 63px 16px 35px;
+        margin-bottom: 54px;
+        position: relative;
+
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            height: auto;
+            width: 100%;
+            padding: 44px 80px 0 48px;
+            margin: 0;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            height: auto;
+            width: 100%;
+            padding: 25px 70px 35px 40px;
+            margin: 0;
+        }
+
+        &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 11px 0 11px 13px;
+            border-color: transparent transparent transparent $latterCompositionsContantBackgroundColor;
+            position: absolute;
+            top:50%;
+            left: 100%;
+            margin-top: -11px;
+
+            @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+                border-width: 30px 20px 0 20px;
+                border-color: $latterCompositionsContantBackgroundColor transparent transparent transparent;
+                top: 100%;
+                left: 50%;
+                transform: translate(-60%, 0);
+                z-index: 1;
+            }
+
+            @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+                border-width: 23px 20px 0 20px;
+                border-color: $latterCompositionsContantBackgroundColor transparent transparent transparent;
+                top: 100%;
+                left: 50%;
+                transform: translate(-60%, 0);
+                z-index: 1;
+            }
+
+        }
+
+        &:nth-child(4) {
+            @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+                order: 2;
+            }
+        }
+
+        &:nth-child(5) {
+            @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+                order: 4;
+            }
+        }
+
+        &--middle {
+
+            &::after {
+                display: none;
+            }
+
+            &::before {
+                content: '';
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 11px 13px 11px 0;
+                border-color: transparent $latterCompositionsContantBackgroundColor transparent transparent;
+                position: absolute;
+                left: -13px;
+                top:50%;
+                margin-top: -11px;
+
+                @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+                    border-width: 30px 20px 0 20px;
+                    border-color: $latterCompositionsContantBackgroundColor transparent transparent transparent;
+                    top: 100%;
+                    left: 50%;
+                    transform: translate(-60%, 0);
+                    z-index: 1;
+                }
+
+                @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+                    border-width: 23px 20px 0 20px;
+                    border-color: $latterCompositionsContantBackgroundColor transparent transparent transparent;
+                    top: 100%;
+                    left: 50%;
+                    transform: translate(-60%, 0);
+                    z-index: 1;
+                }
+            }
+        }
+    }
+
+    &__composition-heading {
+        @include Text-Style-5-mod();
+        margin: 38px 0 31px;
+        height: 47px;
+        display: block;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 60px 0 70px;
+        }
+    }
+
+    &__textbox {
+        @include ellipsis(3, 37.07px);
+    }
+
+    &__text-inside {
+        @include Text-Style-6-primary();
+        margin: 0;
+    }
+
+    &__iframe {
+        display: block;
+        width: 50%;
+        height: 420px;
+        margin-bottom: 54px;
+        border: none;
+        box-sizing: border-box;
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+            padding: 0;
+            width: 100%;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin-bottom: 50px;
+        }
+
+        &--indian-summer {
+            background: url("../images/latter_compositions_pic1.jpg") no-repeat center;
+        }
+
+        &--indian-summer-remix {
+            background: url("../images/latter_compositions_pic2.jpg") no-repeat center;
+        }
+
+        &--chill-nation {
+            background: url("../images/latter_compositions_pic3.jpg") no-repeat center;
+        }
+
+        &:nth-child(3) {
+            @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+                order: 3;
+            }
+        }
+
+        &:nth-child(6) {
+            @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+                order: 5;
+            }
+        }
+    }
+}
+
+
+
+.socials {
+    @include Text-Style-12();
+    margin: 85px auto 0;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+
+    &__button {
+        background-color: transparent;
+        border: none;
+    }
+
+    &__value {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12px;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            font-size: 16px;
+        }
+    }
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        margin: 144px 0 0 320px;
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        margin: 95px auto 0;
+
+    }
+}
+
+
+
+// Carousel block
+
+.carousel-section {
+    height: auto;
+    margin: 80px auto 136px;
+}
+
+.carousel-inner {
+
+    &__item {
+        width: 100%;
+        height: 642px;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            height: 960px;
+        }
+
+        &--first {
+            background: url("../images/slider_1.jpg") no-repeat center;
+            background-size: cover;
+
+            @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+                background: url("../images/slider_1_tablet.jpg") no-repeat center;
+            }
+
+            @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+                background: url("../images/slider_1_mobile.jpg") no-repeat center;
+            }
+        }
+
+        &--second {
+            background: url("../images/slider_2.jpg") no-repeat center;
+            background-size: cover;
+
+            @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+                background: url("../images/slider_2_tablet.jpg") no-repeat center;
+            }
+
+            @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+                background: url("../images/slider_2_mobile.jpg") no-repeat center;
+            }
+        }
+
+        &--third {
+            background: url("../images/slider_3.jpg") no-repeat center;
+            background-size: cover;
+
+            @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+                background: url("../images/slider_3_tablet.jpg") no-repeat center;
+            }
+
+            @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+                background: url("../images/slider_3_mobile.jpg") no-repeat center;
+            }
+        }
+    }
+}
+
+.carousel-control {
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+        display: none;
+    }
+
+    &.left {
+        @include gradient-horizontal($start-color: rgba(0,0,0,1), $end-color: rgba(0,0,0,.1));
+        @include opacity(.3);
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: transparent;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 85.5px 85px 85.5px 0;
+            border-color: transparent $white transparent transparent;
+            @include rotate(180deg);
+            left: 0;
+            top:250px;
+        }
+    }
+    &.right {
+        left: auto;
+        right: 0;
+        @include gradient-horizontal($start-color: rgba(0,0,0,.1), $end-color: rgba(0,0,0,1));
+        @include opacity(.3);
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: transparent;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 85.5px 85px 85.5px 0;
+            border-color: transparent $carouselControlTriangleButtonsColor transparent transparent;
+            right: 0;
+            top: 250px;
+        }
+    }
+
+    &__button-icon {
+        color: $carouselControlButtonIconColor;
+        position: absolute;
+        top: 50%;
+        @include translate(0, -10%);
+        left: 20px;
+        z-index: 1;
+
+        &--right {
+            left: auto;
+            right: 20px;
+        }
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+        display: none;
+    }
+}
+
+.carousel-indicators {
+    li {
+        margin: 5px 20px;
+    }
+
+    .active {
+        margin: 4px 20px;
+    }
+}
+
+
+//New tracks block
+
+
+.new-tracks {
+
+    @each $number in '01', '02', '03', '04', '05', '06' {
+        &__item {
+            @include make-sm-column(8);
+            @include make-sm-column-push(2);
+            @include make-md-column(6);
+            @include make-md-column-push(0);
+            @include make-lg-column(4);
+            @include make-lg-column-push(0);
+            height: 422px;
+            margin-top: 28px;
+            padding: 28px 48px 0 46px;
+            position: relative;
+            overflow: hidden;
+
+            @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+                height: 642px;
+                padding: 45px 48px 0 23px;
+
+            }
+
+            @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+                height: 514px;
+                padding: 45px 45px 0 40px;
+                margin-top: 60px;
+
+            }
+
+            &--#{$number} {
+                background: url("../images/new_img#{$number}.jpg") no-repeat center;
+                @include number($number);
+
+                @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+                    background: url("../images/new_img#{$number}_tablet.jpg") no-repeat center;
+                }
+
+                @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+                    background: url("../images/new_img#{$number}_mobile.jpg") no-repeat center;
+                }
+            }
+        }
+    }
+
+    &__textbox {
+        @include ellipsis(7, 24.27px);
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            @include ellipsis(7, 36.85px);
+            margin-top: 40px;
+            margin-left: 30px;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            padding: 0 35px 0 38px;
+        }
+    }
+
+    &__text {
+        @include Text-Style-6-primary();
+        margin: 0;
+    }
+}
+
+
+// Upcoming events block
+
+
+.upcoming-events {
+    background: url("../images/upcoming_image.jpg") no-repeat center bottom;
+    background-size: contain;
+    width: 100%;
+    min-height: 1000px;
+    padding-bottom: 300px;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        background: url("../images/upcoming_image_tablet.jpg") no-repeat center bottom;
+        background-size: contain;
+        min-height: 1336px;
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        background: url("../images/upcoming_image_mobile.jpg") no-repeat center bottom;
+        background-size: contain;
+        min-height: 1170px;
+        padding-bottom: 700px;
+    }
+
+    &__block {
+        @include make-sm-column(8);
+        @include make-sm-column-push(2);
+        @include make-md-column(7);
+        @include make-md-column-push(5);
+        @include make-lg-column(6);
+        @include make-lg-column-push(6);
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin-top: -30px;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin-top: 0;
+        }
+    }
+
+    &__description {
+        margin: 88px 0 0 0;
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+            margin: 0;
+        }
+    }
+
+    &__heading {
+        @include Text-Style-14();
+        margin: 120px 0 95px -22px;
+        display: inline-block;
+        position: relative;
+        padding: 0 20px 0;
+        z-index: 1;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 310px 0 170px -36px;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin: 90px -30px 95px -30px;
+            padding: 0 30px 0;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: $headingHorisontalLineColor;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: 0;
+        }
+    }
+
+    &__title {
+        @include Text-Style-5();
+
+        &::after {
+            content: '';
+            display: block;
+            width: 132px;
+            height: 1px;
+            background-color: $upcomingEventsTitleBottomBorderColor;
+            margin-top: 10px;
+
+            @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+                width: 196px;
+            }
+        }
+    }
+
+    &__text {
+        @include Text-Style-6-primary();
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin-top: 17px;
+            @include ellipsis(5, 36.48px);
+        }
+    }
+
+    &__date {
+        @include Text-Style-7();
+        margin: 7px 0 20px 1px;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 10px 0 20px 1px;
+        }
+    }
+
+}
+
+
+.vertical-line {
+    width: 1px;
+    background-color: $verticalLineColor;
+    margin-left: 34px;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        margin-left: 53px;
+    }
+
+    &--51 {
+        height: 51px;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            height: 80px;
+            margin-top: 22px;
+        }
+    }
+
+    &--165 {
+        height: 165px;
+        margin-bottom: 18px;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            height: 250px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+
+
+// History block
+
+.history {
+    @include block-description-heading-text();
+    background: url("../images/history_image.jpg") no-repeat center bottom;
+    background-size: contain;
+    width: 100%;
+    min-height: 1105px;
+    padding-bottom: 610px;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        background: url("../images/history_image_tablet.jpg") no-repeat center bottom;
+        background-size: contain;
+        padding-bottom: 850px;
+
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        background: url("../images/history_image_mobile.jpg") no-repeat center bottom;
+        background-size: contain;
+        padding-bottom: 1000px;
+    }
+
+    &__navigation {
+        width: 1200px;
+        margin: 45px auto 0;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 60px auto 0;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            width: 750px;
+            margin: 0 auto;
+        }
+    }
+
+    &__stack {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        list-style-type: none;
+        margin: 0;
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            justify-content: space-around;
+        }
+    }
+
+    &__item {
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+            &:nth-child(1), &:nth-child(9) {
+                display: none;
+            }
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            &:nth-child(3), &:nth-child(7) {
+                display: none;
+            }
+        }
+    }
+
+    &__button {
+        display: block;
+        height: 60px;
+        border: none;
+        background-color: transparent;
+        @include Text-Style-18();
+        position: relative;
+
+
+        &:hover {
+            text-decoration: none;
+            @include Text-Style-17();
+
+        }
+
+        &:focus {
+            text-decoration: none;
+            outline-color: transparent;
+            @include Text-Style-17();
+            padding: 0 50px;
+
+            @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+                padding: 0 84px;
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                width: 8px;
+                height: 8px;
+                border: transparent;
+                border-radius: 50%;
+                background-color: $historyFocusedButtonAdsColor;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                @include translate(0, -50%);
+
+                @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+                    width: 12px;
+                    height: 12px;
+                    top: 43px;
+                    left: 15px;
+                }
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                width: 8px;
+                height: 8px;
+                border: transparent;
+                border-radius: 50%;
+                background-color: $historyFocusedButtonAdsColor;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                @include translate(0, -50%);
+
+                @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+                    width: 12px;
+                    height: 12px;
+                    top: 43px;
+                    right: 15px;
+                }
+            }
+        }
+    }
+
+    &__legend {
+        margin: 20px auto 0;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 60px auto 0;
+        }
+    }
+
+    &__story {
+        @include Text-Style-19();
+    }
+}
+
+.horisontal-line {
+    width: 83px;
+    height: 1px;
+    opacity: 0.28;
+    background-color: $horisontalLineColor;
+    margin-top: 29px;
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-lg - 1px) {
+        &:nth-child(2), &:nth-child(8) {
+            display: none;
+        }
+    }
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        margin-top: 42px;
+        width: 220px;
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        width: 160px;
+    }
+}
+
+
+
+// Contact block
+
+
+.contact {
+    background: url("../images/contact_image.jpg") no-repeat center bottom;
+    margin-top: 120px;
+    background-size: contain;
+    width: 100%;
+    min-height: 862px;
+    padding-bottom: 400px;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        background: url("../images/contact_image_tablet.jpg") no-repeat center bottom;
+        background-size: contain;
+        margin-top: 0;
+        padding-bottom: 720px;
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        background: url("../images/contact_image_mobile.jpg") no-repeat center bottom;
+        background-size: contain;
+        margin-top: 0;
+        padding-bottom: 1000px;
+    }
+
+    &__block {
+        @include make-sm-column-offset(2);
+        @include make-md-column(8);
+        @include make-md-column-offset(4);
+        @include make-lg-column(6);
+        @include make-lg-column-offset(6);
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin-top: -30px;
+            padding: 0;
+        }
+    }
+
+    &__description {
+        margin: 118px 0 0 0;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 107px 0 0 0;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin: 20px 0 0 0;
+        }
+    }
+
+    &__heading {
+        @include Text-Style-20();
+        display: inline-block;
+        position: relative;
+        padding: 0 20px 0;
+        z-index: 1;
+        margin-left: -22px;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            padding: 0 50px 0;
+            margin-left: -55px;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: $headingHorisontalLineColor;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: 0;
+        }
+    }
+
+    &__text {
+        @include Text-Style-21();
+        margin: 10px 0 10px 0;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 17px 0 100px 0;
+        }
+    }
+
+    &__form-column {
+        @include make-sm-column(8);
+        margin-top: -65px;
+    }
+
+
+    &__socials-column {
+        @include make-sm-column(2);
+        @include make-sm-column-push(2);
+        padding-left: 23px;
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            padding-left: 0;
+        }
+    }
+
+    &__row {
+        @include make-row();
+        margin-top: 89px;
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin-top: 100px;
+        }
+    }
+}
+
+
+.contact-form {
+    display: inline-block;
+
+    &__item {
+        @include Text-Style-6();
+        display: block;
+        width: 382px;
+        border: none;
+        border-bottom: solid 1px $contactFormItemBorderColor;
+        margin-top: 48px;
+        background-color: transparent;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin-top: 70px;
+            width: 550px;
+        }
+    }
+
+    &__submit {
+        border: none;
+        @include Text-Style-22();
+        background-color: transparent;
+        padding: 0;
+        margin-top: 30px;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin-top: 43px;
+        }
+    }
+}
+
+.socials2 {
+    height: 190px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    border-left: solid 1px $socialsVerticalLineColor;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        height: 300px;
+    }
+
+    &__item {
+        display: block;
+        font-size: 18px;
+        margin: 0 auto;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            font-size: 30px;
+        }
+    }
+}

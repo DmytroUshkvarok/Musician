@@ -1,0 +1,17 @@
+// Breakpoints
+$screen-sm: 750px;
+$screen-md: 1300px;
+$screen-lg: 1500px;
+
+// Gutter size
+$grid-gutter-width: 24px;
+
+// Container sizes
+$container-tablet: (736px + $grid-gutter-width);
+$container-desktop: (1200px + $grid-gutter-width);
+$container-large-desktop: (1200px + $grid-gutter-width);
+
+// Carousel
+
+$carousel-control-width: 10%;
+$carousel-control-font-size: 40px;
