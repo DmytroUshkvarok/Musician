@@ -1,0 +1,368 @@
+//Fonts
+
+@mixin font($family, $size, $line-height, $fontColor, $align, $letter-spacing) {
+    font-family: $family;
+    font-size: $size;
+    line-height: $line-height;
+    color: $fontColor;
+    text-align: $align;
+    letter-spacing: $letter-spacing;
+}
+
+@mixin font-format($size, $line-height, $letter-spacing) {
+    font-size: $size;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+}
+
+@mixin Text-Style-13 {
+    @include font($primaryFont, 82.5px, 141px, $newTracksCompositionBackgroundNumberColor, justify, 0);
+    font-weight: 700;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(125px, 216.63px, 0);
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        @include font-format(100.42px, 174.09px, 0);
+    }
+}
+@mixin Text-Style-2 {
+    @include font($secondaryFont, 50.49px, 59.27px, $mainFontColor, center, 5.95px);
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(74.44px, 87.39px, 8.1px);
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        font-weight: 400;
+    }
+}
+@mixin Text-Style-14 {
+    @include font($secondaryFont, 50px, 59.27px, $upcomingEventsHeadingColor, left, 5.9px);
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(71px, 86.51px, 8.7px);
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        font-weight: 400;
+    }
+}
+@mixin Text-Style-20 {
+    @include Text-Style-14();
+    color: $contactHeadingColor;
+}
+@mixin Text-Style-17 {
+    @include font($secondaryFont, 35px, 59.15px, $historyButtonHoverTextColor, center, 4.1px);
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(53.03px, 88.56px, 6.26px);
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        @include font-format(35.49px, 59.27px, 4.19px);
+    }
+}
+@mixin Text-Style-18 {
+    @include Text-Style-17();
+    color: $historyButtonTextColor;
+}
+@mixin Text-Style-5 {
+    @include font($primaryFont, 23px, 24.27px, $mainFontColor, justify, 0.6px);
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(36.57px, 36.85px, .61px);
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        letter-spacing: .41px;
+    }
+}
+@mixin Text-Style-5-mod {
+    @include Text-Style-5();
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        line-height: 30px;
+    }
+}
+@mixin Text-Style-10 {
+    @include font($primaryFont, 23px, 35.27px, $mainFontColor, left, 0.4px);
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(34.51px, 52.92px, .61px);
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        @include font-format(23px, 30px, .41px);
+    }
+}
+@mixin Text-Style {
+    @include font($secondaryFont, 17px, 34px, $mainNavigationLinkColor, center, 2px);
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(34.51px, 40px, .5px);
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        @include font-format(28px, 34px, .5px);
+    }
+}
+@mixin Text-Style-11 {
+    @include Text-Style();
+    color: $mainFontColor;
+}
+@mixin Text-Style-9 {
+    @include font($primaryFont, 14px, 56px, $secondaryFontColor, center, 0);
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(21px, 36.41px, 0);
+    }
+}
+@mixin Text-Style-9-name {
+    @include font($primaryFont, 14px, 24px, $secondaryFontColor, left, 0);
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(21.26px, 36.85px, 0);
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        @include font-format(15px, 24.27px, 0);
+    }
+}
+@mixin Text-Style-7 {
+    @include font($primaryFont, 14px, 24.27px, $albumDateTextColor, justify, 0);
+    font-weight: 700;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(21px, 36.41px, 0);
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        font-size: 15px;
+    }
+}
+@mixin Text-Style-4 {
+    @include font($primaryFont, 14px, 56px, $mainFontColor, center, 0);
+    font-weight: 700;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(21px, 36.41px, 0);
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        @include font-format(15px, 24.27px, 0);
+    }
+}
+@mixin Text-Style-4-name {
+    @include Text-Style-7();
+    font-weight: 700;
+    color: $mainFontColor;
+}
+@mixin Text-Style-8 {
+    @include font($primaryFont, 14px, 24.27px, $albumDescriptionTextColor, left, .25px);
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(21px, 36.41px, .38px);
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        font-size: 15px;
+        letter-spacing: .27px;
+    }
+}
+@mixin Text-Style-6 {
+    @include Text-Style-8();
+    color: $contactFormItemTextColor;
+}
+@mixin Text-Style-6-primary {
+    @include Text-Style-8();
+    color: $primaryFontColor;
+}
+@mixin Text-Style-19 {
+    @include font($primaryFont, 14px, 19px, $historyStoryTextColor, center, 0);
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(21px, 28.79px, .0);
+    }
+}
+@mixin Text-Style-3 {
+    @include font($primaryFont, 14px, 24.27px, $primaryFontColor, center, 1.65px);
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(21px, 35.78px, .25px);
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        font-size: 15px;
+        letter-spacing: 1.77px;
+    }
+}
+@mixin Text-Style-21 {
+    @include font($primaryFont, 14px, 29.4px, $contactTextColor, left, 0);
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(21px, 46.27px, .6px);
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        @include font-format(15px, 24.27px, .27px);
+    }
+}
+@mixin Text-Style-12 {
+    font-size: 20px;
+    text-align: left;
+    color: $socialsTextColor;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        font-size: 25px;
+    }
+
+    @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+        font-size: 17px;
+    }
+}
+@mixin Text-Style-22 {
+    @include font($primaryFont, 20px, 24px, $mainFontColor, justify, 0);
+    font-weight: bold;
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        @include font-format(29.58px, 35.89px, 0);
+    }
+}
+
+
+
+//Buttons
+
+@mixin button-link($buttonBackground,$buttonAlterBackground,$buttonBorderColor) {
+    display: block;
+    width: 196px;
+    height: 56px;
+    background-color: transparent;
+    background: $buttonBackground no-repeat center $buttonAlterBackground;
+    border: solid 1px $buttonBorderColor;
+    padding: 0;
+
+    &:hover {
+        color: $buttonLinkHoverColor;
+    }
+
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+        width: 294px;
+        height: 84px;
+    }
+}
+
+
+//Blocks
+
+@mixin block-description-heading-text() {
+    &__block {
+        @include make-sm-column(12);
+        @include make-sm-column-push(0);
+
+    }
+
+    &__description {
+        margin: 100px 0 0;
+        text-align: center;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 88px 0 0;
+        }
+    }
+
+    &__heading {
+        @include Text-Style-2();
+        margin: 54px 0 0 9px;
+        display: inline-block;
+        position: relative;
+        padding: 0 20px 0;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: $headingHorisontalLineColor;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: -1;
+        }
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin-left: 30px;
+            padding: 0 75px 0;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            margin: 0;
+        }
+    }
+
+    &__text {
+        @include make-sm-column(12);
+        @include make-sm-column-push(0);
+        @include make-lg-column(10);
+        @include make-lg-column-push(1);
+        @include Text-Style-3();
+        margin: 40px 0 133px;
+        padding: 0 70px 0;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            margin: 50px 0 158px;
+            padding: 0;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            padding: 0;
+            margin: 36px 0 125px;
+        }
+    }
+}
+
+@mixin ellipsis ($lines: 1, $line-height: 24px) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: $line-height * $lines;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    -moz-line-clamp: $lines;
+}
+
+
+@mixin translate($x, $y) {
+    -webkit-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+    transform: translate($x, $y);
+}
+
+
+// Composition number
+
+@mixin number($num) {
+    &::after {
+        content:'#{$num}';
+        @include Text-Style-13;
+        position: absolute;
+        bottom: -50px;
+        left: 294px;
+
+        @media all and (min-width: $screen-md) and (max-width: $screen-lg - 1px) {
+            bottom: -80px;
+            left: 420px;
+        }
+
+        @media all and (min-width: $screen-sm) and (max-width: $screen-md - 1px) {
+            bottom: -65px;
+            left: 360px;
+        }
+    }
+}
