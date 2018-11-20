@@ -8,7 +8,9 @@ Breakpoints was fixed at 750px, 1300px, 1500px.
 
 The possibilities of SASS were used for writing styles on this project.
 
+All styles are written with methodology of BEM.
+
 In addition to HTML and CSS some modules with javascript were also used: ScrollSpy JS, Bootstrap slider.
 
 
-Tags: HTML, CSS, SASS, Bootstrap, ScrollSpy
+Tags: HTML, CSS, SASS, Bootstrap, ScrollSpy, BEM.
